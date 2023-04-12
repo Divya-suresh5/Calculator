@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: orange;
+    }
+    h1{
+        font-size: 2.5rem;
+        font-style: oblique;
+        text-align: center;
+    }
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div{
+        background-color: black;
+        height: 500px;
+        width: 300px;  
+    }
+    table{
+        width: 100%;
+    }
+    input[type="button"],button{
+        width: 100%;
+        height: 80px;
+        color: white;
+        background-color: black;
+        font-weight: bold;
+        font-size: 30px;
+        border-style: none;
+        border-radius: 50px;
+    }
+    th{
+        background-color: black;
+        width: 100%;
+        color:white;
+        border-radius: 2px;
+        height: 70px;     
+        padding : 10px;
+    }
+    input[type=text]{
+        background-color: #90ee90;
+        height:100%;
+        font-weight: bold;
+    }
+    tr{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    td{
+        width: 4.5rem;
+    }
+    #equal{
+        background-color: orange;
+    }
+</style>
+</head>
+<body>
+<h1>SIMPLE  &nbsp; CALCULATOR</h1>
+<br>
+<section>
+<div>
+    <table>
+        <tr>
+            <th colspan="4"><input type="text" id="equation" size="30"></th>
+        </tr>
+        <tr>
+            <td><input onclick="clearall()" type="button" value="AC"></td>
+            <td><input onclick="clearonce()" type="button" value="C"></td>
+            <td><input onclick="dis('%')" type="button" value="%"></td>
+            <td><input onclick="dis('/')" type="button" value="/"></td>
+        </tr>
+        <tr>
+            <td><input onclick="dis('7')" type="button" value="7"></td>
+            <td><input onclick="dis('8')" type="button" value="8"></td>
+            <td><input onclick="dis('9')" type="button" value="9"></td>
+            <td><input onclick="dis('*')" type="button" value="X"></td>
+        </tr>
+
+        <tr>
+            <td><input onclick="dis('4')" type="button" value="4"></td>
+            <td><input onclick="dis('5')" type="button" value="5"></td>
+            <td><input onclick="dis('6')" type="button" value="6"></td>
+            <td><input onclick="dis('+')" type="button" value="+"></td>
+        </tr>
+
+        <tr>
+            <td><input onclick="dis('1')" type="button" value="1"></td>
+            <td><input onclick="dis('2')" type="button" value="2"></td>
+            <td><input onclick="dis('3')" type="button" value="3"></td>
+            <td><input onclick="dis('-')" type="button" value="-"></td>
+
+        </tr>
+
+        <tr>
+            <td><input onclick="dis('0')" type="button" value="0"></td>
+            <td><input onclick="dis('00')" type="button" value="00"></td>
+            <td><input onclick="dis('.')" type="button" value="."></td>
+            <td><input onclick="enter()" type="button" value="=" id="equal"></td>
+        </tr>
+    </table>
+    </div>
+</section>
+<script>
+    let e=document.getElementById("equation");
+
+    function dis(val){
+        e.value += val;
+    }
+
+    function enter(){
+        let x=e.value;
+        let y=eval(x);
+        e.value=y;
+    }
+
+    function clearonce(){
+        e.value=e.value.slice(0,-1);
+    }
+
+    function clearall(){
+        e.value="";
+    }
+</script>
+</body>
+</html>
